@@ -2,6 +2,7 @@ const mowBtn = document.querySelector(".mow-btn");
 const washBtn = document.querySelector(".wash-btn");
 const weedsBtn = document.querySelector(".weeds-btn");
 const invoiceBtn = document.querySelector(".invoice-btn");
+const deleteBtn = document.querySelector(".delete-btn");
 const taskList = document.querySelector(".task-list");
 const priceList = document.querySelector(".total-list");
 const total = document.querySelector(".total-amount");
@@ -126,7 +127,23 @@ invoiceBtn.addEventListener("click", () => {
   // price.append(priceLi);
 });
 
-// deleteBtn.addEventListener("click", () => {
-//   const deleteBtn = document.querySelector(".delete-btn");
-//   window.location.reload();
-// });
+document.addEventListener("click", (e) => {
+  if (
+    e.target.className === "delete-btn" &&
+    e.target.parentElement.textContent === "Mow Lawndelete"
+  ) {
+    // console.log(e);
+    // console.log("delete me");
+    // console.log(taskArr.indexOf("Mow Lawn"));
+    // console.log(e.target.parentNode.textContent);
+    // console.log(e.target.parentElement.textContent);
+    let index = taskArr.indexOf("Mow Lawn");
+    let indexPrice = priceArr.indexOf(10);
+    console.log(index);
+    taskArr.splice(index, 1);
+    priceArr.splice(indexPrice, 1);
+    console.log(taskArr);
+    renderTask();
+    renderTotal();
+  }
+});
