@@ -1,9 +1,11 @@
 const mowBtn = document.querySelector(".mow-btn");
 const washBtn = document.querySelector(".wash-btn");
 const weedsBtn = document.querySelector(".weeds-btn");
+const invoiceBtn = document.querySelector(".invoice-btn");
 const taskList = document.querySelector(".task-list");
 const priceList = document.querySelector(".total-list");
-console.log(taskList);
+const total = document.querySelector(".total-amount");
+console.log(total);
 
 // const taskLi = document.createElement("li");
 // const priceLi = document.createElement("li");
@@ -42,20 +44,42 @@ function renderTask() {
   taskList.innerHTML = "";
 
   for (let i = 0; i < taskArr.length; i++) {
+    // if(taskArr.includes)
     const taskItem = document.createElement("li");
-    // taskItem.classList.add("");
+    const deleteBtn = document.createElement("button");
+    taskItem.classList.add("task-font");
+    deleteBtn.classList.add("delete-btn");
     taskItem.textContent += taskArr[i];
+    deleteBtn.textContent = "delete";
     taskList.append(taskItem);
+    taskItem.append(deleteBtn);
+    renderTotal();
   }
 }
 
-mowBtn.addEventListener("click", () => {
-  taskArr.push(taskObj[0].name); // 10
-  priceArr.push(taskObj[0].price); // 10
-  console.log(taskArr);
-  console.log(priceArr);
+function renderTotal() {
+  let totalAmount = 0;
+  priceList.innerHTML = "";
+  for (let i = 0; i < priceArr.length; i++) {
+    const taskPrice = document.createElement("li");
+    taskPrice.classList.add("price-font");
+    taskPrice.textContent += `£${priceArr[i]}`;
+    priceList.append(taskPrice);
+    totalAmount += priceArr[i];
+    console.log(totalAmount);
+  }
+  total.textContent = `£${totalAmount}`;
+}
 
-  renderTask();
+mowBtn.addEventListener("click", () => {
+  if (!priceArr.includes(10)) {
+    taskArr.push(taskObj[0].name); // 10
+    priceArr.push(taskObj[0].price); // 10
+    console.log(taskArr);
+    console.log(priceArr);
+
+    renderTask();
+  }
   // taskLi.textContent += "Mow Lawn";
   // priceLi.textContent += `£ ${mowPrice}`;
   // task.append(taskLi);
@@ -63,11 +87,13 @@ mowBtn.addEventListener("click", () => {
 });
 
 washBtn.addEventListener("click", () => {
-  taskArr.push(taskObj[1].name); // 10
-  priceArr.push(taskObj[1].price); // 10
-  console.log(taskArr);
-  console.log(priceArr);
-  renderTask();
+  if (!priceArr.includes(15)) {
+    taskArr.push(taskObj[1].name); // 10
+    priceArr.push(taskObj[1].price); // 10
+    console.log(taskArr);
+    console.log(priceArr);
+    renderTask();
+  }
   // taskLi.textContent = "Wash Car";
   // priceLi.textContent += `£ ${washPrice}`;
   // task.append(taskLi);
@@ -75,13 +101,32 @@ washBtn.addEventListener("click", () => {
 });
 
 weedsBtn.addEventListener("click", () => {
-  taskArr.push(taskObj[2].name); // 10
-  priceArr.push(taskObj[2].price); // 10
-  console.log(taskArr);
-  console.log(priceArr);
-  renderTask();
+  if (!priceArr.includes(20)) {
+    taskArr.push(taskObj[2].name); // 10
+    priceArr.push(taskObj[2].price); // 10
+    console.log(taskArr);
+    console.log(priceArr);
+    renderTask();
+  }
   // taskLi.textContent = "Pull Weeds";
   // priceLi.textContent += `£ ${weedsPrice}`;
   // task.append(taskLi);
   // price.append(priceLi);
 });
+
+invoiceBtn.addEventListener("click", () => {
+  priceList.innerHTML = "";
+  taskList.innerHTML = "";
+  total.textContent = "£0";
+  taskArr = [];
+  priceArr = [];
+  // taskLi.textContent = "Pull Weeds";
+  // priceLi.textContent += `£ ${weedsPrice}`;
+  // task.append(taskLi);
+  // price.append(priceLi);
+});
+
+// deleteBtn.addEventListener("click", () => {
+//   const deleteBtn = document.querySelector(".delete-btn");
+//   window.location.reload();
+// });

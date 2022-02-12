@@ -72,7 +72,8 @@ h1 {
 }
 
 .price-list {
-  border: 2px solid #d8d8d8;
+  padding: 0 0 1rem 0;
+  border-bottom: 2px solid #d8d8d8;
   flex-direction: row;
   /* justify-content: space-between; */
 }
@@ -95,20 +96,43 @@ h1 {
 }
 
 .task {
-  border: 3px solid green;
   width: 50%;
 }
 .price {
-  border: 3px solid orange;
   width: 50%;
   display: flex;
   justify-content: end;
 }
-/* .total-list {
-  flex-direction: row;
-  border: 3px solid orange;
-  width: 50%;
-} */
-.total-list {
+
+.total-list,
+.task-list {
   list-style: none;
+}
+
+.total-amount {
+  color: #7a7a7a;
+  font-size: 2rem;
+}
+
+.task-font {
+  font-weight: bold;
+  padding: 0 0 1rem 0;
+}
+
+.price-font {
+  /* font-weight: bold; */
+  padding: 0 0 1rem 0;
+}
+
+.fa-envelope {
+  margin-right: 0.3em;
+}
+
+.delete-btn {
+  border: none;
+  background: none;
+  margin-left: 1em;
+  font-size: 0.6rem;
+  color: #7a7a7a;
+  cursor: pointer;
 }
