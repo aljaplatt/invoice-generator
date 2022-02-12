@@ -74,7 +74,7 @@ h1 {
 .price-list {
   border: 2px solid #d8d8d8;
   flex-direction: row;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 .invoice-btn {
@@ -92,4 +92,23 @@ h1 {
 
 .notes {
   font-size: 0.6rem;
+}
+
+.task {
+  border: 3px solid green;
+  width: 50%;
+}
+.price {
+  border: 3px solid orange;
+  width: 50%;
+  display: flex;
+  justify-content: end;
+}
+/* .total-list {
+  flex-direction: row;
+  border: 3px solid orange;
+  width: 50%;
+} */
+.total-list {
+  list-style: none;
 }
