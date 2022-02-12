@@ -146,4 +146,40 @@ document.addEventListener("click", (e) => {
     renderTask();
     renderTotal();
   }
+  if (
+    e.target.className === "delete-btn" &&
+    e.target.parentElement.textContent === "Wash Cardelete"
+  ) {
+    // console.log(e);
+    // console.log("delete me");
+    // console.log(taskArr.indexOf("Mow Lawn"));
+    // console.log(e.target.parentNode.textContent);
+    // console.log(e.target.parentElement.textContent);
+    index = taskArr.indexOf("Wash Car");
+    indexPrice = priceArr.indexOf(15);
+    console.log(index);
+    taskArr.splice(index, 1);
+    priceArr.splice(indexPrice, 1);
+    console.log(taskArr);
+    renderTask();
+    renderTotal();
+  }
+  if (
+    e.target.className === "delete-btn" &&
+    e.target.parentElement.textContent === "Pull Weedsdelete"
+  ) {
+    // console.log(e);
+    // console.log("delete me");
+    // console.log(taskArr.indexOf("Mow Lawn"));
+    // console.log(e.target.parentNode.textContent);
+    // console.log(e.target.parentElement.textContent);
+    index = taskArr.indexOf("Pull Weeds");
+    indexPrice = priceArr.indexOf(20);
+    console.log(index);
+    taskArr.splice(index, 1);
+    priceArr.splice(indexPrice, 1);
+    console.log(taskArr);
+    renderTask();
+    renderTotal();
+  }
 });
