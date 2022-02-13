@@ -4,7 +4,7 @@ const weedsBtn = document.querySelector(".weeds-btn");
 const invoiceBtn = document.querySelector(".invoice-btn");
 const deleteBtn = document.querySelector(".delete-btn");
 const taskList = document.querySelector(".task-list");
-const priceList = document.querySelector(".total-list");
+const totalList = document.querySelector(".total-list");
 const total = document.querySelector(".total-amount");
 
 let taskArr = [];
@@ -43,12 +43,12 @@ function renderTask() {
 
 function renderTotal() {
   let totalAmount = 0;
-  priceList.innerHTML = "";
+  totalList.innerHTML = "";
   for (let i = 0; i < priceArr.length; i++) {
     const taskPrice = document.createElement("li");
     taskPrice.classList.add("price-font");
     taskPrice.textContent += `£${priceArr[i]}`;
-    priceList.append(taskPrice);
+    totalList.append(taskPrice);
     totalAmount += priceArr[i];
   }
   total.textContent = `£${totalAmount}`;
@@ -56,8 +56,8 @@ function renderTotal() {
 
 mowBtn.addEventListener("click", () => {
   if (!priceArr.includes(10)) {
-    taskArr.push(taskObj[0].name); // 10
-    priceArr.push(taskObj[0].price); // 10
+    taskArr.push(taskObj[0].name);
+    priceArr.push(taskObj[0].price);
 
     renderTask();
   }
@@ -65,20 +65,16 @@ mowBtn.addEventListener("click", () => {
 
 washBtn.addEventListener("click", () => {
   if (!priceArr.includes(15)) {
-    taskArr.push(taskObj[1].name); // 10
-    priceArr.push(taskObj[1].price); // 10
-    console.log(taskArr);
-    console.log(priceArr);
+    taskArr.push(taskObj[1].name);
+    priceArr.push(taskObj[1].price);
     renderTask();
   }
 });
 
 weedsBtn.addEventListener("click", () => {
   if (!priceArr.includes(20)) {
-    taskArr.push(taskObj[2].name); // 10
-    priceArr.push(taskObj[2].price); // 10
-    console.log(taskArr);
-    console.log(priceArr);
+    taskArr.push(taskObj[2].name);
+    priceArr.push(taskObj[2].price);
     renderTask();
   }
 });
