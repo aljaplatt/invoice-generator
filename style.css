@@ -8,6 +8,8 @@ html {
   font-family: "Inter", sans-serif;
   background: #112a5f;
 }
+
+/*===================== containers ================= */
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -28,6 +30,27 @@ html {
   border-radius: 8px 8px 0 0;
 }
 
+.total {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.title-container {
+  flex-direction: row;
+  justify-content: space-between;
+  color: #7a7a7a;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  min-height: 4rem;
+}
+
+.price-list {
+  padding: 0 0 1rem 0;
+  border-bottom: 2px solid #d8d8d8;
+  flex-direction: row;
+}
+/* ============================================== */
+/* ================ titles========================== */
 h1 {
   font-size: 3rem;
   font-weight: bolder;
@@ -38,6 +61,7 @@ h1 {
   font-size: 1rem;
 }
 
+/*==================== buttons ==================== */
 .btn-section {
   width: 100%;
 }
@@ -59,19 +83,14 @@ h1 {
 .btn:hover {
   border: 1px solid #5a5a5a;
 }
-.title-container {
-  flex-direction: row;
-  justify-content: space-between;
-  color: #7a7a7a;
-  font-size: 0.6rem;
-  text-transform: uppercase;
-  min-height: 4rem;
-}
 
-.price-list {
-  padding: 0 0 1rem 0;
-  border-bottom: 2px solid #d8d8d8;
-  flex-direction: row;
+.delete-btn {
+  border: none;
+  background: none;
+  margin-left: 1em;
+  font-size: 0.6rem;
+  color: #7a7a7a;
+  cursor: pointer;
 }
 
 .invoice-btn {
@@ -81,15 +100,7 @@ h1 {
   margin-top: 4rem;
 }
 
-.total {
-  flex-direction: row;
-  justify-content: space-between;
-  color: #7a7a7a;
-}
-
-.notes {
-  font-size: 0.6rem;
-}
+/* ======================================================== */
 
 .task {
   width: 50%;
@@ -103,6 +114,11 @@ h1 {
 .total-list,
 .task-list {
   list-style: none;
+}
+
+/* ============ text ========================== */
+.notes {
+  font-size: 0.6rem;
 }
 
 .total-amount {
@@ -119,15 +135,7 @@ h1 {
   padding: 0 0 1rem 0;
 }
 
+/* ============= icon ======================== */
 .fa-envelope {
   margin-right: 0.3em;
-}
-
-.delete-btn {
-  border: none;
-  background: none;
-  margin-left: 1em;
-  font-size: 0.6rem;
-  color: #7a7a7a;
-  cursor: pointer;
 }

@@ -80,7 +80,7 @@ weedsBtn.addEventListener("click", () => {
 });
 
 invoiceBtn.addEventListener("click", () => {
-  priceList.innerHTML = "";
+  totalList.innerHTML = "";
   taskList.innerHTML = "";
   total.textContent = "£0";
   taskArr = [];
